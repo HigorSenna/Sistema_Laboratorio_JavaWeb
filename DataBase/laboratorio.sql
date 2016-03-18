@@ -72,6 +72,30 @@ LOCK TABLES `exame` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `plano_saude`
+--
+
+DROP TABLE IF EXISTS `plano_saude`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `plano_saude` (
+  `idPlanoSaude` int(11) NOT NULL AUTO_INCREMENT,
+  `nomePlanoSaude` varchar(45) NOT NULL,
+  `valorPlanoSaude` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`idPlanoSaude`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `plano_saude`
+--
+
+LOCK TABLES `plano_saude` WRITE;
+/*!40000 ALTER TABLE `plano_saude` DISABLE KEYS */;
+/*!40000 ALTER TABLE `plano_saude` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `usuario`
 --
 
@@ -105,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-18 15:34:10
+-- Dump completed on 2016-03-18 15:42:28
