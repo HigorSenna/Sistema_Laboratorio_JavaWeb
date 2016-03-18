@@ -32,7 +32,16 @@ CREATE TABLE `cliente` (
   `sexoCliente` enum('m','f') NOT NULL,
   `enderecoCliente` varchar(60) NOT NULL,
   `possuiPlanoSaude` tinyint(4) DEFAULT '0',
-  PRIMARY KEY (`idCliente`)
+  `idExame` int(11) DEFAULT NULL,
+  `idUsuario` int(11) DEFAULT NULL,
+  `idPlanoSaude` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idCliente`),
+  KEY `fk_cliente_usuario_idx` (`idUsuario`),
+  KEY `fk_cliente_plano_saude_idx` (`idPlanoSaude`),
+  KEY `fk_cliente_exame_idx` (`idExame`),
+  CONSTRAINT `fk_cliente_exame` FOREIGN KEY (`idExame`) REFERENCES `exame` (`idExame`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_cliente_plano_saude` FOREIGN KEY (`idPlanoSaude`) REFERENCES `plano_saude` (`idPlanoSaude`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_cliente_usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -129,4 +138,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-18 15:42:28
+-- Dump completed on 2016-03-18 16:12:46
