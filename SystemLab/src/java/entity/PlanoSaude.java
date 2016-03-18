@@ -6,7 +6,6 @@
 package entity;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -45,10 +44,9 @@ public class PlanoSaude implements Serializable {
     @Basic(optional = false)
     @Column(nullable = false, length = 45)
     private String nomePlanoSaude;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Basic(optional = false)
-    @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal valorPlanoSaude;
+    @Column(nullable = false)
+    private double valorPlanoSaude;
     @OneToMany(mappedBy = "idPlanoSaude", fetch = FetchType.LAZY)
     private List<Cliente> clienteList;
 
@@ -59,7 +57,7 @@ public class PlanoSaude implements Serializable {
         this.idPlanoSaude = idPlanoSaude;
     }
 
-    public PlanoSaude(Integer idPlanoSaude, String nomePlanoSaude, BigDecimal valorPlanoSaude) {
+    public PlanoSaude(Integer idPlanoSaude, String nomePlanoSaude, double valorPlanoSaude) {
         this.idPlanoSaude = idPlanoSaude;
         this.nomePlanoSaude = nomePlanoSaude;
         this.valorPlanoSaude = valorPlanoSaude;
@@ -81,11 +79,11 @@ public class PlanoSaude implements Serializable {
         this.nomePlanoSaude = nomePlanoSaude;
     }
 
-    public BigDecimal getValorPlanoSaude() {
+    public double getValorPlanoSaude() {
         return valorPlanoSaude;
     }
 
-    public void setValorPlanoSaude(BigDecimal valorPlanoSaude) {
+    public void setValorPlanoSaude(double valorPlanoSaude) {
         this.valorPlanoSaude = valorPlanoSaude;
     }
 

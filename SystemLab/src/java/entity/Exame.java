@@ -6,7 +6,6 @@
 package entity;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -47,10 +46,9 @@ public class Exame implements Serializable {
     @Basic(optional = false)
     @Column(nullable = false)
     private Integer idExame;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Basic(optional = false)
-    @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal precoExame;
+    @Column(nullable = false)
+    private double precoExame;
     @Column(length = 400)
     private String descricaoExame;
     @Basic(optional = false)
@@ -70,7 +68,7 @@ public class Exame implements Serializable {
         this.idExame = idExame;
     }
 
-    public Exame(Integer idExame, BigDecimal precoExame, String tempoJejumExame, Date dataEntregaExame) {
+    public Exame(Integer idExame, double precoExame, String tempoJejumExame, Date dataEntregaExame) {
         this.idExame = idExame;
         this.precoExame = precoExame;
         this.tempoJejumExame = tempoJejumExame;
@@ -85,11 +83,11 @@ public class Exame implements Serializable {
         this.idExame = idExame;
     }
 
-    public BigDecimal getPrecoExame() {
+    public double getPrecoExame() {
         return precoExame;
     }
 
-    public void setPrecoExame(BigDecimal precoExame) {
+    public void setPrecoExame(double precoExame) {
         this.precoExame = precoExame;
     }
 
