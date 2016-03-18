@@ -63,7 +63,7 @@ DROP TABLE IF EXISTS `exame`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `exame` (
   `idExame` int(11) NOT NULL AUTO_INCREMENT,
-  `precoExame` decimal(10,2) NOT NULL,
+  `precoExame` double NOT NULL,
   `descricaoExame` varchar(400) DEFAULT NULL,
   `tempoJejumExame` varchar(45) NOT NULL,
   `dataEntregaExame` date NOT NULL,
@@ -90,7 +90,7 @@ DROP TABLE IF EXISTS `plano_saude`;
 CREATE TABLE `plano_saude` (
   `idPlanoSaude` int(11) NOT NULL AUTO_INCREMENT,
   `nomePlanoSaude` varchar(45) NOT NULL,
-  `valorPlanoSaude` decimal(10,2) NOT NULL,
+  `valorPlanoSaude` double NOT NULL,
   PRIMARY KEY (`idPlanoSaude`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -138,4 +138,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-18 16:12:46
+-- Dump completed on 2016-03-18 16:41:05
