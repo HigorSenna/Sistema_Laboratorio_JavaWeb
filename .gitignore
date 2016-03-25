@@ -46,3 +46,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 /SystemLab/nbproject/private/
+/SystemLab/build/
+/SystemLab/dist/
